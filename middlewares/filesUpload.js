@@ -19,7 +19,7 @@ const fileStorage=multer.diskStorage({
 //file upload middleware
 
 const uploadFile=multer({
-    storage:fileStorage,
+    storage:multer.memoryStorage(),
     fileFilter:(req,file,callback)=>{
         if(file.mimetype ==='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
             callback(null,true);
